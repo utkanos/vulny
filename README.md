@@ -3,6 +3,17 @@ Vulny
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+
+To run
+```
+bundle install
+rake db:migrate db:seed
+rails server
+```
+
+Then hit http://localhost:3000
+
+
 For the job fair, we should only need to show the following method in
 the Sessions controller as it shows the SQL injection as well as the XSS
 
@@ -33,3 +44,4 @@ class SessionsController < ApplicationController
   end
 end
 ```
+
