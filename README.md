@@ -3,48 +3,33 @@ Vulny
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+For the job fair, we should only need to show the following method in
+the Sessions controller as it shows the SQL injection as well as the XSS
 
-Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
+```ruby
+class SessionsController < ApplicationController
+  def create
+    username = params[:session][:username]
+    password = params[:session][:password]
 
-Problems? Issues?
------------
-
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn’t work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.1.3
-- Rails 4.1.6
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+    # First check to make sure the user exists
+    if User.find_by(username: username)
+      # If the user exists, check to see if the password is correct, if it is sign the user in.
+      if user = User.where("username = '#{ username }' AND password = '#{ password }'").first
+        sign_in user
+        redirect_to controller: 'users', action: 'index'
+      else
+        # Show an error that the username and password combination were incorrect
+        # Need to mark this string as html_safe, otherwise I can't insert the link into the flash.
+        flash.now[:error] = "Invalid username/password combination, <a href='/signin'>click here</a> to try again".html_safe
+        render "error"
+      end
+    else
+      # Show an error that there is no such username
+      # Need to mark this string as html_safe, otherwise I can't insert the link into the flash.
+      flash.now[:error] = "User #{ username } not found, <a href='/signin'>click here</a> to try again".html_safe
+      render "error"
+    end
+  end
+end
+```
