@@ -14,15 +14,13 @@ class SessionsController < ApplicationController
         redirect_to controller: 'users', action: 'index'
       else
         # Show an error that the username and password combination were incorrect
-        # Need to mark this string as html_safe, otherwise I can't insert the link into the flash.
-        flash.now[:error] = "Invalid username/password combination, <a href='/signin'>click here</a> to try again".html_safe
-        render "error"
+        flash[:error] = "Invalid username/password combination, <a href='/signin'>click here</a> to try again"
+        redirect_to root_path
       end
     else
       # Show an error that there is no such username
-      # Need to mark this string as html_safe, otherwise I can't insert the link into the flash.
-      flash.now[:error] = "User #{ username } not found, <a href='/signin'>click here</a> to try again".html_safe
-      render "error"
+      flash[:error] = "User #{ username } not found, <a href='/signin'>click here</a> to try again"
+      redirect_to root_path
     end
   end
 
