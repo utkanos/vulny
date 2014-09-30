@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-  def new
-  end
-
   def create
     username = params[:session][:username]
     password = params[:session][:password]
@@ -14,16 +11,13 @@ class SessionsController < ApplicationController
         redirect_to controller: 'users', action: 'index'
       else
         # Show an error that the username and password combination were incorrect
-        flash[:error] = "Invalid username/password combination, <a href='/signin'>click here</a> to try again"
+        flash[:error] = "Invalid username/password combination"
         redirect_to root_path
       end
     else
       # Show an error that there is no such username
-      flash[:error] = "User #{ username } not found, <a href='/signin'>click here</a> to try again"
+      flash[:error] = "User #{ username } not found"
       redirect_to root_path
     end
-  end
-
-  def destroy
   end
 end
