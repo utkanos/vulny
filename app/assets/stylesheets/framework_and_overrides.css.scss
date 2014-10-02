@@ -76,8 +76,15 @@ p {
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-    color: white;
+    color: $gray-medium-light;
     text-decoration: none;
+  }
+}
+
+a.nav-link {
+  color: white !important;
+  &:hover {
+    text-decoration: underline !important;
   }
 }
 
