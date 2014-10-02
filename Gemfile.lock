@@ -28,16 +28,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-    better_errors (2.0.0)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
-      rack (>= 0.9.0)
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.2)
-    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -45,7 +38,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.2.1)
     high_voltage (2.2.1)
@@ -135,8 +127,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  better_errors
-  binding_of_caller
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   high_voltage
