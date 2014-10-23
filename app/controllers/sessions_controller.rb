@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     # First check to make sure the user exists
     if User.find_by(username: username)
       # If the user exists, check to see if the password is correct, if it is sign the user in.
-      if user = User.where("username = '#{ username }' AND password = '#{ password }'").first
+      if user = User.find_by_sql("SELECT * FROM users WHERE username = '#{ username }' AND password = '#{ password }'").first
         sign_in user
         redirect_to controller: 'users', action: 'index'
       else
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     end
   end
-  
+
   def destroy
     sign_out
     flash[:notice] = "You have been signed out."
