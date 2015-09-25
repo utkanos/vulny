@@ -1,5 +1,12 @@
 <% provide(:title, "Sign in") %>
-<h1>Welcome to the Login Portal.</h3>
+
+<script>
+$(document).ready(function() {
+	alert("<%= URI.unescape(request.query_string.split("error=")[1]).html_safe %>")
+})
+</script>
+
+<h1>Welcome to the Login Portal.</h1>
 <h2>Please sign in below. If you encounter technical problems, please email admin@hostname.com</h2>
 
 <div class="row">

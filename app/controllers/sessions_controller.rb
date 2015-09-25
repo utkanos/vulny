@@ -15,9 +15,8 @@ class SessionsController < ApplicationController
         redirect_to root_path
       end
     else
-      # Show an error that there is no such username
-      flash[:error] = "User #{ username } not found"
-      redirect_to root_path
+      # Hacky shit to allow xss
+      redirect_to root_path(:error => 'Login is currently disabled.')
     end
   end
 
