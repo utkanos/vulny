@@ -8,8 +8,8 @@ $(document).ready(function() {
 </script>
 <% end %>
 
-<h1>Welcome to the Login Portal.</h1>
-<h2>Please sign in below. If you encounter technical problems, please email admin@hostname.com</h2>
+<h1>Welcome to the Employee Access Portal (EAP) </h1>
+<h2>Please sign in below. If you encounter technical problems, please notify the <b>admin</b> mailing list.</h2>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -27,8 +27,8 @@ $(document).ready(function() {
 	<br>
 <table style="width:100%">
 <tr>
-<td style="width:50%">    <%= button_to "Register", {action: "register"}, class: "btn btn-primary" %> </td>
-<td style="width:50%">    <%= button_to "Forgot Password?", {action: "forgot"}, class: "btn btn-warning" %> </td> 
+<td style="width:50%">    <%= button_to "Register", register_path, method: :get, class: "btn btn-primary" %></td>
+<td style="width:50%">    <%= button_to "Forgot Password?", forgot_path, method: :get, class: "btn btn-warning" %> </td> 
 </tr>
 </table>
   </div>

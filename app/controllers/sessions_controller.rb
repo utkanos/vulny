@@ -16,8 +16,14 @@ class SessionsController < ApplicationController
       end
     else
       # Hacky shit to allow xss
-      redirect_to root_path(:error => 'Login is currently disabled.')
+      redirect_to root_path(:error => "Login temporarily disabled due to site maintenance!" )
     end
+  end
+
+  def register
+  end
+
+  def forgot
   end
 
   def destroy
