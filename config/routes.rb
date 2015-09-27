@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'get'
+  match '/register', to: 'sessions#register',     via: 'get'
+  match '/forgot', to: 'sessions#forgot',     via: 'get'
 
   root to: 'sessions#new'
 end
