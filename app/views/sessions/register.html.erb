@@ -1,1 +1,21 @@
-<h1>REGISTER</h1>
+<% provide(:title, "Register") %>
+
+<h1>Employee Access Portal (EAP) Registration </h1>
+<h2>Please enter a valid email address to receive additional instructions to set up your EAP account.</h2> 
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email, class: "form-control" %>
+
+
+      <%= f.submit "Register", class: "btn btn-success" %>
+    <% end %>
+	<br>
+	<br>
+	<br>
+    <%= button_to "Home", root_path, method: :get, class: "btn btn-primary" %> </td> 
+  </div>
+</div>

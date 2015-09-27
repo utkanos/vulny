@@ -1,1 +1,21 @@
-<h1>FORGOT</h1>
+<% provide(:title, "Forgot Password") %>
+
+<h1>Forgotten Password Assistance </h1>
+<h2>Please enter a valid username or email address and answer the secret question recorded for your account.</h2> 
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.label :account %>
+      <%= f.text_field :account, class: "form-control" %>
+
+
+      <%= f.submit "Retreive Security Question", class: "btn btn-success" %>
+    <% end %>
+	<br>
+	<br>
+	<br>
+    <%= button_to "Home", root_path, method: :get, class: "btn btn-primary" %> </td> 
+  </div>
+</div>
