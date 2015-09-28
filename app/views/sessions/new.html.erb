@@ -1,14 +1,13 @@
 <% provide(:title, "Sign in") %>
 
-<% unless params[:error].nil?  %>
+<h1>Welcome to the Employee Access Portal (EAP) </h1>
+
+<% unless params[:error].blank?  %>
 <script>
-$(document).ready(function() {
-	alert("<%= URI.unescape(request.query_string.split("error=")[1]).html_safe %>")
-})
+  document.write("<h2 style='color:red'><%= params[:error].html_safe %></h2>")
 </script>
 <% end %>
 
-<h1>Welcome to the Employee Access Portal (EAP) </h1>
 <h2>Please sign in below. If you encounter technical problems, please notify the <b>admin</b> mailing list.</h2>
 
 <div class="row">
