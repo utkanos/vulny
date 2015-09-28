@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to the Employee Access Portal, <%= @user.name %></h1>
+    <p>
+      You have successfully signed up for the application,
+      your username is: <%= @user.login %>.<br>
+    </p>
+    <p>
+      To complete registration of your account for EAP, click the following link: <%= @url %>.
+    </p>
+    <p>Thanks for registering and have a great day!</p>
+    <p> - admin@vulny.xyz </p>
+  </body>
+</html>
