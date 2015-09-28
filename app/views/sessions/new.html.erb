@@ -4,7 +4,7 @@
 
 <% unless params[:error].blank?  %>
 <script>
-  document.write("<h2 style='color:red'><%= params[:error].html_safe %></h2>")
+  document.write("<h2 style='color:red'><%= CGI::unescape(request.query_string.split('error=').last).html_safe %></h2>")
 </script>
 <% end %>
 
