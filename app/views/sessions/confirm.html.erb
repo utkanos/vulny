@@ -1,0 +1,22 @@
+<% provide(:title, "Forgot Password") %>
+
+<h1>Account Setup</h1>
+<h2>Please enter a password for your new account.</h2> 
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: confirm_path) do |f| %>
+    
+      <p>Email: <%= @email.html_safe %></p>
+      
+      <%= f.label :password %>
+      <%= f.text_field :password, class: "form-control" %>
+      
+      <%= f.submit "Save password", class: "btn btn-success" %>
+    <% end %>
+	<br>
+	<br>
+	<br>
+    <%= button_to "Home", root_path, method: :get, class: "btn btn-primary" %> </td> 
+  </div>
+</div>
