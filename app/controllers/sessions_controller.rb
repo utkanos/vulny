@@ -22,6 +22,17 @@ class SessionsController < ApplicationController
 
   def register
   end
+  
+  def register_send
+    session = params[:session]
+    if session
+      email = session[:email]
+    else
+      redirect_to root_path(error: 'No email entered!')
+    end
+    UserMailer.welcome_email(email)
+    redirect_to root_path(error: 'Please check your email for a confirmation link.')
+  end
 
   def forgot
   end
