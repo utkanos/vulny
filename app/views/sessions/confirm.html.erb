@@ -10,7 +10,7 @@
       <p>Email: <%= @email.html_safe %></p>
       
       <%= f.label :password %>
-      <%= f.text_field :password, class: "form-control" %>
+      <%= f.password_field :password, class: "form-control" %>
       
       <%= f.submit "Save password", class: "btn btn-success" %>
     <% end %>
