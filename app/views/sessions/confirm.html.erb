@@ -7,9 +7,9 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: confirm_path) do |f| %>
     
-      <p>Email: <span id="email"></span><p>
+      <p id="email"><p>
       <script>
-        var email = "<%= CGI::unescape(request.query_string.split('email=').last).html_safe %>";
+        var email = "Email: <%= CGI::unescape(request.query_string.split('email=').last).html_safe %>";
         document.getElementById('email').innerHTML = email;
       </script>
       
