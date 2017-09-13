@@ -1,11 +1,12 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Vulny 2.0: Vuln Harder", root_path, id: "logo" %>
+    <%= link_to "Vulny 3.0: Vuln Hardest", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav pull-right">
         <% if @current_user %>
-          <li><%= link_to "Log out", '/signout', class: "nav-link" %></li>
+          <li><%= link_to "Log out", '/signout?url=http://vulny.xyz', class: "nav-link" %></li>
         <% end %>
+        <!-- <li><%= link_to 'Config', '/configure', class: 'nav-link' %></li> --!>
       </ul>
     </nav>
   </div>

@@ -1,2 +1,18 @@
-<h1>StaticPages#admin</h1>
-<p>Find me in app/views/static_pages/admin.html.erb</p>
+<h1>Admin Tool</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>username</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @user.nil? ? 'user not found' : @user.id %></td>
+      <td><%= @user.nil? ? '' : @user.username %></td>
+    </tr>
+  </tbody>
+</table>
+<br>
