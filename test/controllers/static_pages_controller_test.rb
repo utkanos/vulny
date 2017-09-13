@@ -12,7 +12,7 @@ class StaticPagesControllerTest < ActionController::TestCase
   end
 
   test "should get config" do
-    get :config
+    get :configure
     assert_response :success
   end
 
