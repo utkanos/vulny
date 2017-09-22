@@ -4,7 +4,8 @@ class StaticPagesController < ApplicationController
       id = Base64.urlsafe_decode64(params[:id])
       @user = User.exists?(id: id) ? User.find(id) : nil
     else
-      redirect_to "/admin?id=#{Base64.urlsafe_encode64('0')}"
+      id = Base64.urlsafe_encode64('0')
+      redirect_to "/admin?id=#{id}"
     end
   end
 
