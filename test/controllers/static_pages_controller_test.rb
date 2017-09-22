@@ -1,8 +1,13 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionController::TestCase
-  test "should get admin" do
+  test "should get admin redirect without id" do
     get :admin
+    assert_response :redirect
+  end
+
+  test "should get admin with id" do
+    get :admin, { :id => 'MA==' }
     assert_response :success
   end
 
@@ -12,7 +17,7 @@ class StaticPagesControllerTest < ActionController::TestCase
   end
 
   test "should get config" do
-    get :config
+    get :configure
     assert_response :success
   end
 

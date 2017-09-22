@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
   end
   
   def confirm_save
-    redirect_to root_path(error: 'Thank you, your password has been saved.')
+    redirect_to root_path(error: 'Registration temporarily disabled due to site maintenance!')
   end
 
   def forgot
@@ -67,6 +67,6 @@ class SessionsController < ApplicationController
   def destroy
     sign_out
     flash[:notice] = "You have been signed out."
-    redirect_to root_path
+    redirect_to params[:url]
   end
 end
