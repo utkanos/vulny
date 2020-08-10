@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+ruby "2.1.10"
+
 gem 'rails', '4.1.6'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -8,7 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '3.2.0.4'
 gem 'high_voltage'
 group :development do
   gem 'hub', :require=>nil

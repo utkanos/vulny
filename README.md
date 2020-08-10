@@ -1,16 +1,22 @@
 Vulny
 ================
 
-To run
+Rails 4.2 requires a version of Ruby that uses openssl@1.0. This is pretty difficult to get setup locally so instead a Docker configuration is used:
+
 ```
-bundle install
 cp config/database.yml.sample config/database.yml
-rake db:migrate db:seed
-rails server
+docker-compose build
+docker-compose up
+```
+
+On first run, run the following commands when the docker container is up and running:
+
+```
+docker-compose exec web bin/rake db:migrate RAILS_ENV=development
+docker-compose exec web bin/rake db:seed RAILS_ENV=development
 ```
 
 Then hit http://localhost:3000
-
 
 Main method used for authenticating users.
 
